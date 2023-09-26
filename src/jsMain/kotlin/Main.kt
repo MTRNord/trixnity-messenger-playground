@@ -9,6 +9,7 @@ import com.varabyte.kobweb.silk.init.initSilk
 import com.varabyte.kobweb.silk.init.setSilkVariables
 import de.connect2x.trixnity.messenger.DefaultMatrixClientService
 import de.connect2x.trixnity.messenger.trixnityMessengerModule
+import de.connect2x.trixnity.messenger.viewmodel.MainViewModel
 import de.connect2x.trixnity.messenger.viewmodel.RootRouter
 import de.connect2x.trixnity.messenger.viewmodel.RootViewModel
 import de.connect2x.trixnity.messenger.viewmodel.RootViewModelImpl
@@ -71,7 +72,27 @@ fun Base(rootViewModel: RootViewModel) {
         is RootRouter.RootWrapper.MatrixClientInitialization -> {
             Init((routerState as RootRouter.RootWrapper.MatrixClientInitialization).matrixClientInitializationViewModel)
         } // show initialization of the MatrixClient (aka loading screen)
+
+        is RootRouter.RootWrapper.Main -> {
+            Main((routerState as RootRouter.RootWrapper.Main).mainViewModel)
+        }
+
+        is RootRouter.RootWrapper.AddMatrixAccount -> {
+            Login((routerState as RootRouter.RootWrapper.AddMatrixAccount).addMatrixAccountViewModel)
+        }
+
+        is RootRouter.RootWrapper.PasswordLogin -> {
+            PasswordLogin((routerState as RootRouter.RootWrapper.PasswordLogin).passwordLoginViewModel)
+        }
+
         else -> {} // add more cases
+    }
+}
+
+@Composable
+fun Main(mainViewModel: MainViewModel) {
+    Div({ style { padding(25.px) } }) {
+        Text("Main")
     }
 }
 

@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
-
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.jetbrains.compose)
@@ -20,9 +18,6 @@ kotlin {
     }
     sourceSets {
         val jsMain by getting {
-            kotlin.srcDir("src/main/kotlin")
-            resources.srcDir("src/main/resources")
-
             dependencies {
                 implementation(compose.html.core)
                 implementation(compose.runtime)
