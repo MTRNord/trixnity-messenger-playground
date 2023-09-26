@@ -4,41 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc5af14b-7484-46dc-b4cb-0394f9dc3dda" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MagicMatrix_js.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.npmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.run/browser.run.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpack.config.d/webpack-olm.js" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.gitignore" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.idea/artifacts/MagicMatrix_js.xml" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.idea/misc.xml" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.npmrc" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.run/browser.run.xml" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/build.gradle.kts" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/gradle.properties" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/gradlew" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/gradlew.bat" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/settings.gradle.kts" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/src/main/kotlin/main.kt" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/src/main/resources/index.html" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/webpack.config.d/webpack-olm.js" afterDir="false" />
+    <list default="true" id="fc5af14b-7484-46dc-b4cb-0394f9dc3dda" name="Changes" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy.yaml" afterDir="false" />
+      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.github/workflows/deploy.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/.idea/workspace.xml" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +32,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="/var/home/marcel/IdeaProjects/MagicMatrix" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
@@ -83,6 +54,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "terminal",
     "vue.rearranger.settings.migration": "true"
   }
@@ -95,11 +67,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695740188018</updated>
-      <workItem from="1695740189223" duration="400000" />
+      <workItem from="1695740189223" duration="1692000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
   </component>
 </project>
