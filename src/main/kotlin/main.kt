@@ -10,6 +10,7 @@ import com.varabyte.kobweb.silk.init.setSilkVariables
 import de.connect2x.trixnity.messenger.DefaultMatrixClientService
 import de.connect2x.trixnity.messenger.trixnityMessengerModule
 import de.connect2x.trixnity.messenger.viewmodel.RootRouter
+import de.connect2x.trixnity.messenger.viewmodel.RootViewModel
 import de.connect2x.trixnity.messenger.viewmodel.RootViewModelImpl
 import de.connect2x.trixnity.messenger.viewmodel.connecting.MatrixClientInitializationViewModel
 import de.connect2x.trixnity.messenger.viewmodel.util.toFlow
@@ -25,7 +26,6 @@ import org.jetbrains.compose.web.renderComposable
 import org.koin.dsl.koinApplication
 import org.w3c.dom.HTMLElement
 
-@OptIn(ExperimentalCoroutinesApi::class)
 fun main() {
     // Init Kobweb
     initSilk()
@@ -44,37 +44,35 @@ fun main() {
 
         }
     )
-    suspend {
-        rootViewModel.rootStack.toFlow()
-            .mapLatest { it.active.instance }
-            .collect { wrapper ->
-                when (wrapper) {
-                    is RootRouter.RootWrapper.None -> {
-                        renderComposable(rootElementId = "root") {
-                            // Further Init for kobweb
-                            val root = remember { document.getElementById("root") as HTMLElement }
-                            root.setSilkVariables()
-                            Style(SilkStyleSheet)
+    renderComposable(rootElementId = "root") {
+        // Further Init for kobweb
+        val root = remember { document.getElementById("root") as HTMLElement }
+        root.setSilkVariables()
+        Style(SilkStyleSheet)
 
-                            None()
-                        }
-                    }
-
-                    is RootRouter.RootWrapper.MatrixClientInitialization -> {
-                        renderComposable(rootElementId = "root") {
-                            // Further Init for kobweb
-                            val root = remember { document.getElementById("root") as HTMLElement }
-                            root.setSilkVariables()
-                            Style(SilkStyleSheet)
-
-                            Init(wrapper.matrixClientInitializationViewModel)
-                        }
-                    } // show initialization of the MatrixClient (aka loading screen)
-                    else -> {} // add more cases
-                }
-            }
+        Base(rootViewModel)
     }
 
+}
+
+@OptIn(ExperimentalCoroutinesApi::class)
+@Composable
+fun Base(rootViewModel: RootViewModel) {
+    // Trixnity messenger router
+    // FIXME: This seems to loose type info?
+    val routerState by rootViewModel.rootStack.toFlow()
+        .mapLatest { it.active.instance }.collectAsState(RootRouter.RootWrapper.None)
+
+    when (routerState) {
+        is RootRouter.RootWrapper.None -> {
+            None()
+        }
+
+        is RootRouter.RootWrapper.MatrixClientInitialization -> {
+            Init((routerState as RootRouter.RootWrapper.MatrixClientInitialization).matrixClientInitializationViewModel)
+        } // show initialization of the MatrixClient (aka loading screen)
+        else -> {} // add more cases
+    }
 }
 
 @Composable
