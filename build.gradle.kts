@@ -1,15 +1,15 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 
 plugins {
-    kotlin("multiplatform")
-    id("org.jetbrains.compose")
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.jetbrains.compose)
 }
 
 repositories {
     mavenCentral()
     maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     maven("https://gitlab.com/api/v4/projects/47538655/packages/maven")
+    maven("https://us-central1-maven.pkg.dev/varabyte-repos/public")
     google()
 }
 
@@ -26,18 +26,9 @@ kotlin {
             dependencies {
                 implementation(compose.html.core)
                 implementation(compose.runtime)
-                implementation("de.connect2x:trixnity-messenger:1.0.5")
-                implementation("io.insert-koin:koin-compose:1.1.0")
+                implementation(libs.trixnity.messenger)
+                implementation(libs.koin.compose)
             }
         }
-    }
-}
-
-// a temporary workaround for a bug in jsRun invocation - see https://youtrack.jetbrains.com/issue/KT-48273
-afterEvaluate {
-    rootProject.extensions.configure<NodeJsRootExtension> {
-        nodeVersion = "16.0.0"
-        versions.webpackDevServer.version = "4.0.0"
-        versions.webpackCli.version = "4.10.0"
     }
 }

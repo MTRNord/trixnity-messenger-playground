@@ -27,7 +27,7 @@ jobs:
       - name: Upload site
         uses: actions/upload-artifact@v3
         with:
-          name: dist
+          name: github-pages
           path: build/dist
           if-no-files-found: error
           retention-days: 1

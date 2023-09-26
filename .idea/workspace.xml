@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc5af14b-7484-46dc-b4cb-0394f9dc3dda" name="Changes" comment="Feat: Readd Github deployment">
-      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/.github/workflows/deploy.yaml" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.github/workflows/deploy.yaml" afterDir="false" />
+    <list default="true" id="fc5af14b-7484-46dc-b4cb-0394f9dc3dda" name="Changes" comment="Fix: Fix typo in workflow file">
+      <change afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/main.kt" afterDir="false" />
+      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/.idea/workspace.xml" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/build.gradle.kts" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/build.gradle.kts" afterDir="false" />
+      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/gradle.properties" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/gradle.properties" afterDir="false" />
+      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/kotlin-js-store/yarn.lock" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/kotlin-js-store/yarn.lock" afterDir="false" />
+      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/settings.gradle.kts" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/settings.gradle.kts" afterDir="false" />
+      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/src/main/kotlin/main.kt" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/src/main/kotlin/main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +32,15 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <task path="/var/home/marcel/IdeaProjects/MagicMatrix">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -70,6 +87,35 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Gradle.browser">
+    <configuration name="MagicMatrix::var:home:marcel:IdeaProjects:MagicMatrix [kotlinUpgradeYarnLock]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="/var/home/marcel/IdeaProjects/MagicMatrix" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="kotlinUpgradeYarnLock" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.MagicMatrix::var:home:marcel:IdeaProjects:MagicMatrix [kotlinUpgradeYarnLock]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -78,8 +124,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695740188018</updated>
-      <workItem from="1695740189223" duration="1759000" />
+      <workItem from="1695740189223" duration="2666000" />
     </task>
+    <task id="LOCAL-00001" summary="Fix: Fix typo in workflow file">
+      <option name="closed" value="true" />
+      <created>1695742610836</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695742610836</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +154,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Feat: Readd Github deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: Readd Github deployment" />
+    <MESSAGE value="Fix: Fix typo in workflow file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: Fix typo in workflow file" />
   </component>
 </project>

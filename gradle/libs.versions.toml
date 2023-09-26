@@ -1,0 +1,13 @@
+[versions]
+jetbrains-compose = "1.5.1"
+kotlin = "1.9.10"
+trixnity = "1.0.5"
+koin = "1.1.0"
+
+[libraries]
+trixnity-messenger = { module = "de.connect2x:trixnity-messenger", version.ref = "trixnity" }
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
+
+[plugins]
+jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "jetbrains-compose" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
