@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: github-pages
-          path: build/dist
+          path: build/dist/js/productionExecutable
           if-no-files-found: error
           retention-days: 1
   # Deploy job

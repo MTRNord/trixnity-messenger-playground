@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc5af14b-7484-46dc-b4cb-0394f9dc3dda" name="Changes" comment="Fix: Fix typo in workflow file">
-      <change afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/gradle/libs.versions.toml" afterDir="false" />
+    <list default="true" id="fc5af14b-7484-46dc-b4cb-0394f9dc3dda" name="Changes" comment="Fix: Make sure the artifact has the right name and also ensure we properly load the right things and use recent webpack">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/main.kt" afterDir="false" />
+      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/.github/workflows/deploy.yaml" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.github/workflows/deploy.yaml" afterDir="false" />
       <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/.idea/workspace.xml" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/.idea/workspace.xml" afterDir="false" />
       <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/build.gradle.kts" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/build.gradle.kts" afterDir="false" />
-      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/gradle.properties" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/gradle.properties" afterDir="false" />
-      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/kotlin-js-store/yarn.lock" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/kotlin-js-store/yarn.lock" afterDir="false" />
-      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/settings.gradle.kts" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/settings.gradle.kts" afterDir="false" />
+      <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/gradle/libs.versions.toml" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/gradle/libs.versions.toml" afterDir="false" />
       <change beforePath="/var/home/marcel/IdeaProjects/MagicMatrix/src/main/kotlin/main.kt" beforeDir="false" afterPath="/var/home/marcel/IdeaProjects/MagicMatrix/src/main/kotlin/main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +120,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695740188018</updated>
-      <workItem from="1695740189223" duration="2666000" />
+      <workItem from="1695740189223" duration="3203000" />
     </task>
     <task id="LOCAL-00001" summary="Fix: Fix typo in workflow file">
       <option name="closed" value="true" />
@@ -134,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695742610836</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fix: Make sure the artifact has the right name and also ensure we properly load the right things and use recent webpack">
+      <option name="closed" value="true" />
+      <created>1695743685586</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695743685586</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +159,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Feat: Readd Github deployment" />
     <MESSAGE value="Fix: Fix typo in workflow file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: Fix typo in workflow file" />
+    <MESSAGE value="Fix: Make sure the artifact has the right name and also ensure we properly load the right things and use recent webpack" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: Make sure the artifact has the right name and also ensure we properly load the right things and use recent webpack" />
   </component>
 </project>
