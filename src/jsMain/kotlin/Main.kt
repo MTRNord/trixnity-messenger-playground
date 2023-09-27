@@ -3,23 +3,21 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import com.arkivanov.decompose.DefaultComponentContext
+import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
 import com.arkivanov.essenty.lifecycle.LifecycleRegistry
 import com.varabyte.kobweb.silk.SilkStyleSheet
 import com.varabyte.kobweb.silk.init.initSilk
 import com.varabyte.kobweb.silk.init.setSilkVariables
 import de.connect2x.trixnity.messenger.DefaultMatrixClientService
 import de.connect2x.trixnity.messenger.trixnityMessengerModule
-import de.connect2x.trixnity.messenger.viewmodel.MainViewModel
 import de.connect2x.trixnity.messenger.viewmodel.RootRouter
 import de.connect2x.trixnity.messenger.viewmodel.RootViewModel
 import de.connect2x.trixnity.messenger.viewmodel.RootViewModelImpl
 import de.connect2x.trixnity.messenger.viewmodel.connecting.MatrixClientInitializationViewModel
-import de.connect2x.trixnity.messenger.viewmodel.util.toFlow
 import io.github.oshai.kotlinlogging.KotlinLoggingConfiguration
 import io.github.oshai.kotlinlogging.Level
 import kotlinx.browser.document
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.mapLatest
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.css.padding
 import org.jetbrains.compose.web.css.px
@@ -28,6 +26,7 @@ import org.jetbrains.compose.web.dom.Text
 import org.jetbrains.compose.web.renderComposable
 import org.koin.dsl.koinApplication
 import org.w3c.dom.HTMLElement
+import pages.Main
 
 fun main() {
     KotlinLoggingConfiguration.LOG_LEVEL = Level.DEBUG
@@ -63,41 +62,32 @@ fun main() {
 @Composable
 fun Base(rootViewModel: RootViewModel) {
     // Trixnity messenger router
-    // FIXME: This seems to loose type info?
-    val routerState by rootViewModel.rootStack.toFlow()
-        .mapLatest { it.active.instance }.collectAsState(RootRouter.RootWrapper.None)
-
-    when (routerState) {
+    val routerState by rootViewModel.rootStack.subscribeAsState()
+    when (val route = routerState.active.instance) {
         is RootRouter.RootWrapper.None -> {
             None()
         }
 
         is RootRouter.RootWrapper.MatrixClientInitialization -> {
-            Init((routerState as RootRouter.RootWrapper.MatrixClientInitialization).matrixClientInitializationViewModel)
+            Init(route.matrixClientInitializationViewModel)
         } // show initialization of the MatrixClient (aka loading screen)
 
         is RootRouter.RootWrapper.Main -> {
-            Main((routerState as RootRouter.RootWrapper.Main).mainViewModel)
+            Main(route.mainViewModel)
         }
 
         is RootRouter.RootWrapper.AddMatrixAccount -> {
-            Login((routerState as RootRouter.RootWrapper.AddMatrixAccount).addMatrixAccountViewModel)
+            Login(route.addMatrixAccountViewModel)
         }
 
         is RootRouter.RootWrapper.PasswordLogin -> {
-            PasswordLogin((routerState as RootRouter.RootWrapper.PasswordLogin).passwordLoginViewModel)
+            PasswordLogin(route.passwordLoginViewModel)
         }
 
         else -> {} // add more cases
     }
 }
 
-@Composable
-fun Main(mainViewModel: MainViewModel) {
-    Div({ style { padding(25.px) } }) {
-        Text("Main")
-    }
-}
 
 @Composable
 fun Init(matrixClientInitializationViewModel: MatrixClientInitializationViewModel) {

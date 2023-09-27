@@ -24,6 +24,8 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(libs.trixnity.messenger)
                 implementation(libs.kobweb.silk)
+                implementation(libs.decompose)
+                implementation(libs.decompose.extensions.compose.jetbrains)
             }
         }
     }
