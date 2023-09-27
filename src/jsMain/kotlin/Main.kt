@@ -15,6 +15,8 @@ import de.connect2x.trixnity.messenger.viewmodel.RootViewModel
 import de.connect2x.trixnity.messenger.viewmodel.RootViewModelImpl
 import de.connect2x.trixnity.messenger.viewmodel.connecting.MatrixClientInitializationViewModel
 import de.connect2x.trixnity.messenger.viewmodel.util.toFlow
+import io.github.oshai.kotlinlogging.KotlinLoggingConfiguration
+import io.github.oshai.kotlinlogging.Level
 import kotlinx.browser.document
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.mapLatest
@@ -28,6 +30,7 @@ import org.koin.dsl.koinApplication
 import org.w3c.dom.HTMLElement
 
 fun main() {
+    KotlinLoggingConfiguration.LOG_LEVEL = Level.DEBUG
     // Init Kobweb
     initSilk()
 

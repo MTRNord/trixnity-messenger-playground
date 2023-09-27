@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="MagicMatrix-js">
-    <output-path>/var/home/marcel/IdeaProjects/MagicMatrix/build/libs</output-path>
-    <root id="archive" name="MagicMatrix-js.jar">
-      <element id="module-output" name="IdeaProjects.MagicMatrix.jsMain" />
-    </root>
-  </artifact>
-</component>
