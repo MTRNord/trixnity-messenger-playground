@@ -4,7 +4,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
+import com.varabyte.kobweb.compose.css.Overflow
 import com.varabyte.kobweb.compose.css.borderRight
+import com.varabyte.kobweb.compose.css.overflowX
+import com.varabyte.kobweb.compose.css.overflowY
 import de.connect2x.trixnity.messenger.viewmodel.MainViewModel
 import de.connect2x.trixnity.messenger.viewmodel.roomlist.RoomListElementViewModel
 import de.connect2x.trixnity.messenger.viewmodel.roomlist.RoomListRouter
@@ -26,18 +29,19 @@ fun Main(mainViewModel: MainViewModel) {
             display(DisplayStyle.Flex)
             flexDirection(FlexDirection.Row)
             gap(2.px)
-            height(100.percent)
+            height(100.vh)
         }
     }) {
         Div({
             style {
-                height(100.percent)
                 width(25.em)
                 display(DisplayStyle.Flex)
                 flexDirection(FlexDirection.Column)
                 gap(2.px)
                 borderRight(width = 1.px, style = LineStyle.Solid, color = Color("black"))
                 padding(4.px)
+                overflowX(Overflow.Hidden)
+                overflowY(Overflow.Auto)
             }
         }) {
             if (roomList is RoomListRouter.RoomListWrapper.List) {
@@ -49,7 +53,6 @@ fun Main(mainViewModel: MainViewModel) {
                 display(DisplayStyle.Flex)
                 flexDirection(FlexDirection.Column)
                 gap(2.px)
-                height(100.percent)
                 width(100.percent)
                 padding(4.px)
             }
@@ -61,9 +64,9 @@ fun Main(mainViewModel: MainViewModel) {
 
 @Composable
 fun RoomList(roomListViewModel: RoomListViewModel) {
-    val initialSyncFinished by roomListViewModel.initialSyncFinished.collectAsState();
-    val selectedRoomId by roomListViewModel.selectedRoomId.collectAsState();
-    val rooms by roomListViewModel.sortedRoomListElementViewModels.collectAsState();
+    val initialSyncFinished by roomListViewModel.initialSyncFinished.collectAsState()
+    val selectedRoomId by roomListViewModel.selectedRoomId.collectAsState()
+    val rooms by roomListViewModel.sortedRoomListElementViewModels.collectAsState()
 
     if (!initialSyncFinished) {
         Div({
@@ -78,7 +81,7 @@ fun RoomList(roomListViewModel: RoomListViewModel) {
 
 @Composable
 fun Room(roomViewModel: RoomListElementViewModel, selected: Boolean) {
-    val roomName by roomViewModel.roomName.collectAsState();
+    val roomName by roomViewModel.roomName.collectAsState()
     val roomId = roomViewModel.roomId
     Div {
         Text(roomName ?: roomId.full)
