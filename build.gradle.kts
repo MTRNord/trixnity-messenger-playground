@@ -23,8 +23,6 @@ kotlin {
                 implementation(compose.html.core)
                 implementation(compose.runtime)
                 implementation(libs.trixnity.messenger)
-                implementation(libs.koin.core)
-                implementation(libs.koin.compose)
                 implementation(libs.kobweb.silk)
             }
         }
