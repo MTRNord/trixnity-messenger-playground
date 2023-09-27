@@ -156,9 +156,7 @@ fun Login(addMatrixAccountViewModel: AddMatrixAccountViewModel) {
                                     }
                                 }
                             }
-
                         }
-
                     }
 
                     AddMatrixAccountViewModel.ServerDiscoveryState.None -> {}
