@@ -14,8 +14,6 @@ import de.connect2x.trixnity.messenger.viewmodel.RootRouter
 import de.connect2x.trixnity.messenger.viewmodel.RootViewModel
 import de.connect2x.trixnity.messenger.viewmodel.RootViewModelImpl
 import de.connect2x.trixnity.messenger.viewmodel.connecting.MatrixClientInitializationViewModel
-import io.github.oshai.kotlinlogging.KotlinLoggingConfiguration
-import io.github.oshai.kotlinlogging.Level
 import kotlinx.browser.document
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.jetbrains.compose.web.css.Style
@@ -29,7 +27,7 @@ import org.w3c.dom.HTMLElement
 import pages.Main
 
 fun main() {
-    KotlinLoggingConfiguration.LOG_LEVEL = Level.DEBUG
+    //KotlinLoggingConfiguration.LOG_LEVEL = Level.DEBUG
     // Init Kobweb
     initSilk()
 
