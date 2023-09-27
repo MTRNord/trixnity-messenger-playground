@@ -19,9 +19,11 @@ kotlin {
     sourceSets {
         val jsMain by getting {
             dependencies {
+                implementation(npm("copy-webpack-plugin", "11.0.0"))
                 implementation(compose.html.core)
                 implementation(compose.runtime)
                 implementation(libs.trixnity.messenger)
+                implementation(libs.koin.core)
                 implementation(libs.koin.compose)
                 implementation(libs.kobweb.silk)
             }

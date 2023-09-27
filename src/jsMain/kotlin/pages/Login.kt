@@ -20,6 +20,7 @@ import org.jetbrains.compose.web.dom.Text
 fun PasswordLogin(passwordLoginViewModel: PasswordLoginViewModel) {
     val username by passwordLoginViewModel.username.collectAsState();
     val password by passwordLoginViewModel.password.collectAsState();
+    val canLogin by passwordLoginViewModel.canLogin.collectAsState();
     Row(
         Modifier
             .display(DisplayStyle.Flex)
@@ -43,10 +44,10 @@ fun PasswordLogin(passwordLoginViewModel: PasswordLoginViewModel) {
                     username,
                     password = false,
                     onTextChanged = { newText ->
-                        passwordLoginViewModel.username.update {
+                        passwordLoginViewModel.accountName.update {
                             newText
                         }
-                        passwordLoginViewModel.accountName.update {
+                        passwordLoginViewModel.username.update {
                             newText
                         }
                     })
@@ -64,14 +65,16 @@ fun PasswordLogin(passwordLoginViewModel: PasswordLoginViewModel) {
                         }
                     })
             }
-            Button(attrs = {
-                onClick {
-                    if (username.isNotBlank() && password.isNotBlank()) {
-                        passwordLoginViewModel.tryLogin()
+            if (canLogin) {
+                Button(attrs = {
+                    onClick {
+                        if (username.isNotBlank() && password.isNotBlank() && canLogin) {
+                            passwordLoginViewModel.tryLogin()
+                        }
                     }
+                }) {
+                    Text("Login")
                 }
-            }) {
-                Text("Login")
             }
         }
     }
