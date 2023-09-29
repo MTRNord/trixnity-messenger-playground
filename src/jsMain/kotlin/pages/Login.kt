@@ -7,6 +7,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.forms.InputGroup
 import com.varabyte.kobweb.silk.components.forms.TextInput
 import de.connect2x.trixnity.messenger.viewmodel.connecting.AddMatrixAccountMethod
+import de.connect2x.trixnity.messenger.viewmodel.connecting.AddMatrixAccountState
 import de.connect2x.trixnity.messenger.viewmodel.connecting.AddMatrixAccountViewModel
 import de.connect2x.trixnity.messenger.viewmodel.connecting.PasswordLoginViewModel
 import kotlinx.coroutines.flow.update
@@ -20,6 +21,7 @@ fun PasswordLogin(passwordLoginViewModel: PasswordLoginViewModel) {
     val username by passwordLoginViewModel.username.collectAsState();
     val password by passwordLoginViewModel.password.collectAsState();
     val canLogin by passwordLoginViewModel.canLogin.collectAsState();
+    val loginState by passwordLoginViewModel.addMatrixAccountState.collectAsState();
     Row(
         Modifier
             .display(DisplayStyle.Flex)
@@ -64,7 +66,7 @@ fun PasswordLogin(passwordLoginViewModel: PasswordLoginViewModel) {
                         }
                     })
             }
-            if (canLogin) {
+            if (canLogin && loginState !is AddMatrixAccountState.Connecting) {
                 Button(attrs = {
                     onClick {
                         if (username.isNotBlank() && password.isNotBlank() && canLogin) {
@@ -74,6 +76,10 @@ fun PasswordLogin(passwordLoginViewModel: PasswordLoginViewModel) {
                 }) {
                     Text("Login")
                 }
+            } else if (loginState is AddMatrixAccountState.Connecting) {
+                Div({
+                    classes("lds-dual-ring")
+                })
             }
         }
     }

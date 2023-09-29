@@ -62,10 +62,6 @@ fun Base(rootViewModel: RootViewModel) {
     // Trixnity messenger router
     val routerState by rootViewModel.rootStack.subscribeAsState()
     when (val route = routerState.active.instance) {
-        is RootRouter.RootWrapper.None -> {
-            None()
-        }
-
         is RootRouter.RootWrapper.MatrixClientInitialization -> {
             Init(route.matrixClientInitializationViewModel)
         } // show initialization of the MatrixClient (aka loading screen)
@@ -89,15 +85,8 @@ fun Base(rootViewModel: RootViewModel) {
 
 @Composable
 fun Init(matrixClientInitializationViewModel: MatrixClientInitializationViewModel) {
-    val initState by matrixClientInitializationViewModel.currentState.collectAsState();
+    val initState by matrixClientInitializationViewModel.currentState.collectAsState()
     Div({ style { padding(25.px) } }) {
         Text(initState)
-    }
-}
-
-@Composable
-fun None() {
-    Div({ style { padding(25.px) } }) {
-        Text("Initializing matrix")
     }
 }

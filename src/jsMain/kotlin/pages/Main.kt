@@ -17,13 +17,10 @@ import de.connect2x.trixnity.messenger.viewmodel.room.timeline.TimelineRouter
 import de.connect2x.trixnity.messenger.viewmodel.roomlist.RoomListElementViewModel
 import de.connect2x.trixnity.messenger.viewmodel.roomlist.RoomListRouter
 import de.connect2x.trixnity.messenger.viewmodel.roomlist.RoomListViewModel
-import io.github.oshai.kotlinlogging.KotlinLogging
 import net.folivo.trixnity.core.model.RoomId
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
-
-private val log = KotlinLogging.logger { }
 
 @Composable
 fun Main(mainViewModel: MainViewModel) {
